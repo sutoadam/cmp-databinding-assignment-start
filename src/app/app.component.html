@@ -14,9 +14,15 @@
       </ol>
     </div>
   </div>
-  <app-game-control></app-game-control>
   <hr>
-  <div class="row">
-
+  <app-game-control (intervalEmit)="onIntervalEmit($event)"></app-game-control>
+  <hr>
+  <div class="row"
+  *ngFor="let evenNumber of evenNumbers">
+    <app-even><p>Even - {{evenNumber}}</p></app-even>
+  </div>
+  <div class="row"
+       *ngFor="let oddNumber of oddNumbers">
+    <app-odd><p>Odd - {{oddNumber}}</p></app-odd>
   </div>
 </div>
